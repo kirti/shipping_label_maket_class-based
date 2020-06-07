@@ -7,16 +7,6 @@ export class TaskSenderAddress extends React.Component {
 
 	constructor(props) {
 		super(props);
-		this.state = {
-		  fullName: null,
-		  email: null,
-		  password: null,
-		  errors: {
-			fullName: '',
-			email: '',
-			password: '',
-		  }
-		};
 	  }
 
 	onHandleChange = e => {

@@ -18,7 +18,7 @@ export class TaskWeight extends React.Component {
 		const { weight: weightWidgetContext } = this.props.wizardContext
 		return (
 			<>
-				<ListSubheader color="primary">Enter Weight</ListSubheader>
+				<ListSubheader color="primary">Enter Weight fdfgg</ListSubheader>
 				<TextField
 					id="weight"
 					label="Weight"
