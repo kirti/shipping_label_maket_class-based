@@ -50,10 +50,10 @@ it('Render Sender Component when correct user and pwd  ', () => {
   });
 
 
-  it('Stephub page ', async () => {
-	const { container } = render(<App />);
+  it('Render Complete App with all screen with Prev and Next ', async () => {
+
+	const { container  } = render(<App />);
 	const getById = queryByAttribute.bind(null, 'id');
-	const getBylabel = queryByAttribute.bind(null, 'label');
 	const username = getById(container, "username");
 	const password = getById(container, "password");
 	const submitButton = getById(container, "login");
@@ -75,8 +75,11 @@ it('Render Sender Component when correct user and pwd  ', () => {
 	const city = getById(container, "city");
 	const state = getById(container, "state");
 	const zip = getById(container, "zip");
+
 	const nextButton = getById(container, "next");
 	const prevButton = getById(container, "back");
+	
+
 	expect(name.textContent).toBe("");
 	expect(street.textContent).toBe("");
 	expect(city.textContent).toBe("");
@@ -89,9 +92,30 @@ it('Render Sender Component when correct user and pwd  ', () => {
 	const newStreet = "toronto";
 	fireEvent.change(street, { target: { value: newStreet } });
 	fireEvent.click(nextButton)
-	const linkElement2 = getByText(/Enter Receiver's Address gghghghg/i)
+
+
+
+
+	const linkElement2 = await getByText(/Enter Receiver's Address gghghghg/i)
 	expect(linkElement2).toBeInTheDocument()
 	expect(prevButton).not.toBeDisabled()
+
+	const nameReceiver = getById(container, "name");
+	const streetReceiver = getById(container, "street");
+	const cityReceiver = getById(container, "city");
+	const stateReceiver = getById(container, "state");
+	const zipReceiver = getById(container, "zip");
+
+	expect(nameReceiver.textContent).toBe("");
+	expect(streetReceiver.textContent).toBe("");
+	expect(cityReceiver.textContent).toBe("");
+	expect(stateReceiver.textContent).toBe("");
+	expect(zipReceiver.textContent).toBe("");
+
+	const newNameReceiver = "shiva";
+	fireEvent.change(nameReceiver, { target: { value: newNameReceiver } });
+
+
 	fireEvent.click(nextButton)
 	
 	const weight = await getById(container, "weight");
@@ -106,12 +130,11 @@ it('Render Sender Component when correct user and pwd  ', () => {
 	fireEvent.click(nextButton)
 
 	
-
-	/*const shippingOption = await getById(container, "shippingOption");
-	expect(shippingOption[0].textContent).toBe("1");
-	const newShipping = "10";
-	fireEvent.change(shippingOption, { target: { value: newShipping } });*/
-
+	const { getByLabelText } = await render(<App />);
+	const shippingOption =  getByLabelText('Ground')
+	fireEvent.click(shippingOption, { target: { value: "1" } });
+	expect(shippingOption.value).toBe('1')
+	
 
 	const { getByText : shippingScreen } = await render(<App />)
 	const linkElementW = shippingScreen(/Select Shipping Option/i)
@@ -119,14 +142,22 @@ it('Render Sender Component when correct user and pwd  ', () => {
 
 	fireEvent.click(nextButton)
 
+ // Checking previous button from step4 
+	fireEvent.click(prevButton)
+	const { getByText : ShippingScreenExit } = await render(<App />)
+	const confirmScreenExist = ShippingScreenExit(/Select Shipping Option/i)
+	expect(confirmScreenExist).toBeInTheDocument()
+
+
+	fireEvent.click(nextButton)
 	const { getByText : confirmScreen } = await render(<App />)
 	const linkElementConfirm = confirmScreen(/Sender Information/i)
 	expect(linkElementConfirm).toBeInTheDocument()
 
-
-	
-	
-
+	fireEvent.click(nextButton)
+	const { getByText : finalScreen } = await render(<App />)
+	const finalScreenElement = finalScreen(/unknown/i)
+	expect(finalScreenElement).toBeInTheDocument()
   });
 
 
