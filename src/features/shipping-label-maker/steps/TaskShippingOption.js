@@ -14,8 +14,6 @@ class TaskShippingOption extends React.Component {
 	onHandleChange = e => {
 		e.preventDefault()
 		const { onUpdateShippingLblMarket } = this.props
-
-		console.log(e.currentTarget.value, 'e.currentTarget.value')
 		const value = e.currentTarget.value
 		onUpdateShippingLblMarket({ shippingOption: value })
 	}
@@ -24,8 +22,6 @@ class TaskShippingOption extends React.Component {
 		const {
 			wizardContext: { shippingOption },
 		} = this.props
-
-		console.log(ShippingOption, 'ShippingOption')
 
 		return (
 			<>

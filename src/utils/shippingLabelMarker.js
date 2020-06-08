@@ -25,37 +25,3 @@ export const convertWeightToInt = weight => {
 	}
 	return useWeight
 }
-
-/* was doing validation but seems like longer task so leaving it in between */
-export const getStepWidgetContext = (wizardContext, activeStep) => {
-	const { from, to, weight, shippingOption } = wizardContext
-
-	switch (activeStep) {
-		case 0:
-			const { name, street, city, state, zip } = from
-			if (name !== '' && street !== '' && city !== '' && state !== '' && zip !== '') {
-				return true
-			}
-			return false
-		case 1:
-			const { name: nameTo, street: streetTo, city: cityTo, state: stateTo, zip: zipTo } = to
-			if (nameTo !== '' && streetTo !== '' && cityTo !== '' && stateTo !== '' && zipTo !== '') {
-				return true
-			}
-			return false
-		case 2:
-			if (weight > 0) {
-				return true
-			}
-			return false
-		case 3:
-			if (shippingOption !== '') {
-				return true
-			}
-			return false
-		case 4:
-			return true
-		default:
-			console.error('Error in getStepWidgetContext activestep not exist', activeStep)
-	}
-}
