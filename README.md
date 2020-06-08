@@ -29,6 +29,31 @@ iii) StepHubActionButton - renders the previous and next button for the step 3. 
 5 ### `Step 3 (GetWeight)` - `Task` is named as TaskWeight.js and located at [src/features/shipping-label-maker/steps/TaskWeight.js] 6. ### `Step 4 (GetShippingOption)` - `Task` is named as TaskSenderAddress.js and located at [src/features/shipping-label-maker/steps/TaskShippingOption.js] 7. ### `Step 5 (Confirm)` - `Task` is named as TaskConfirm.js and located at [src/features/shipping-label-maker/steps/TaskConfirm.js]
 8.### `ShippingLabel` - is named as `ShippingLabel.js` and located at [src/features/shipping-label-maker/ShippingLabel.js]
 
+<<<<<<< HEAD
+=======
+### Low Level Design , Project file and folder structure 
+  ------ ### `Project File naming convention`
+     a) Folder name should in lower case or lower case with dashes(-).
+     b) File name should be in camel case
+     
+     ### `Low Level Design `
+     1.  `ShippingLabelMaker` [src/features/shipping-label-maker/ShippingLabelMarker.js] 
+        It is main file to start the project's steps and in this file you will find the StepHub component which is wrrapedComponent for Wizard HOC 
+     2. 'StepHub' [src/features/shipping-label-maker/steps/StepHub.js] 
+        a) It contains StepHubProgressBar and TaskHub component for rendering the steps. 
+            i) StepHubProgressBar - It is used to display the progress bar in stepper mode. 
+            ii) TaskHub is responsible to display the required form as per active step and complete logic for rendering Task is added in         getCurrentTask() function. 
+            We can add as many components within this one step 
+            that's why it is named as TaskHub 
+            iii) StepHubActionButton - It renders the previous and next button for the step.
+     3. ### `Step 1 (GetSenderAddress)` - `Task` is named as TaskSenderAddress.js and located at [src/features/shipping-label-maker/steps/TaskSenderAddress.js]
+     4.  ### `Step 2 (GetReceiverAddress)` - `Task` is named as TaskReceiverAddress.js and located at [src/features/shipping-label-maker/steps/TaskReceiverAddress.js]
+     5 ### `Step 3 (GetWeight)` - `Task` is named as TaskWeight.js and located at [src/features/shipping-label-maker/steps/TaskWeight.js]
+     6.  ### `Step 4 (GetShippingOption)` - `Task` is named as TaskSenderAddress.js and located at [src/features/shipping-label-maker/steps/TaskShippingOption.js]
+     7. ### `Step 5 (Confirm)` - `Task` is named as TaskConfirm.js and located at [src/features/shipping-label-maker/steps/TaskConfirm.js]
+     8.### `ShippingLabel` - is named as `ShippingLabel.js` and located at  [src/features/shipping-label-maker/ShippingLabel.js]
+ 
+>>>>>>> 6ed9456aca82edb560ad255a14e36a2b02807577
 ### `Core Component wizard` [src/core/components/wizard]
 
 The file is located at [src/core/components/wizard/folder/Wizard.js.]
@@ -45,6 +70,7 @@ This is used as utility of shippingLabelMarker to get shipping cost , getShippin
 
 ### `common folder` [src/common]
 
+<<<<<<< HEAD
 It is used for command components like Header, footer , signup etc.
 
 ### `UI library`
@@ -60,13 +86,31 @@ File of Testcafe is located at [src/e2e/app.js]. A basic test case is written to
 
 ### `Unit testing`
 
+=======
+### `UI library` 
+Material UI - 
+It modifies the css according to given template.
+ 
+### `End to End Testing` [src/e2e]
+### TestCafe
+   File of Testcafe is located at [src/e2e/app.js]. A basic test case is written to validate whole application workflow. Configuration is added for only chrome browser for now. But we can modified the configuations as per our requirement. Ideally we should add all browsers to verify the code . 
+   
+### `Unit testing`(95% coverage)
+>>>>>>> 6ed9456aca82edb560ad255a14e36a2b02807577
 ### React testing library
 
+<<<<<<< HEAD
 File of unit test case is located at [src/App.test.js]. Four test cases are written to validate
 
 1. Wizard moves backwards and forwards based on actions sent by steps.
 2. Wizard calls onComplete() of the parent when a steps sends the end action.
 3. Shipping Label marker prints the shipping label when onComplete() is called.
+=======
+### `Validations `
+   Validation pending for steps - Not completed 
+   
+### `PACKAGE.JSON - USEFUL COMMANDS FOR PROJECT DEPLOYMENT AND TESTING `
+>>>>>>> 6ed9456aca82edb560ad255a14e36a2b02807577
 
 ### `Validations`
 
