@@ -11,6 +11,10 @@ Description: It will install all the dependencies of project.
 Runs the app in the development mode.<br />
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
+### `HERoku DEPLOY URL  `https://shipping-label-kk.herokuapp.com/`
+username :sapient 
+pwd : sapient@123
+
 ### Low Level Design , Project file and folder structure
 
 ------ ### `Project File naming convention`
@@ -58,7 +62,9 @@ This is higher order component class so that it can accept steps, actions and wi
 
 ### `Auth Component` [src/core/components/auth]
 
-This is higher order function component. This will help in Authentication, and then it will initiate the shipping label marker project. --- To run this, go to http://localhost:3000](http://localhost:3000) and enter the username: kirti and password:shiva@3@456
+This is higher order function component. This will help in Authentication, and then it will initiate the shipping label marker project. --- To run this, go to http://localhost:3000](http://localhost:3000) and enter the 
+username :sapient 
+pwd : sapient@123
 --- Basic validation is added for now for login button
 
 ### `Util Folder` [src/util]
