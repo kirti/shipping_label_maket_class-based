@@ -1,8 +1,9 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import { WizardAction } from './wizard-action'
 
 function Wizard(WizardComponent) {
-	return class extends React.PureComponent {
+	class _Wizard extends React.PureComponent {
 		constructor(props) {
 			super(props)
 			this.state = {
@@ -12,46 +13,65 @@ function Wizard(WizardComponent) {
 			}
 		}
 
-		handleNextStep = () => {
+		onNext = () => {
 			const { activeStep } = this.state
 			this.setState({
 				activeStep: activeStep + 1,
 			})
 		}
 
-		handlePreviousStep = () => {
+		onPrev = () => {
 			const { activeStep } = this.state
 			this.setState({
 				activeStep: activeStep - 1,
 			})
 		}
 
-		handleConfirm = () => {
-			console.log('handleConfirm')
+		onAction = action => {
+			const { onComplete } = this.props
+
+			switch (action) {
+				case WizardAction.prev:
+					this.onPrev()
+					break
+				case WizardAction.next:
+					this.onNext()
+					break
+				case WizardAction.end:
+					onComplete()
+					break
+				default:
+					console.error('Widget Action not Exist', action)
+			}
 		}
 
 		render() {
-			const { onUpdateShippingInfo } = this.props
+			const { onUpdateShippingLblMarket, header: Header, wizardContext } = this.props
 			return (
 				<>
+					<Header />
 					<WizardComponent
-						onBackBtn={this.handlePreviousStep}
-						onNextBtn={this.handleNextStep}
-						onConfirmBtn={this.handleConfirm}
-						wizardContext={this.state.wizardContext}
+						onAction={this.onAction}
+						wizardContext={wizardContext}
 						activeStep={this.state.activeStep}
-						onUpdateShippingInfo={onUpdateShippingInfo}
+						onUpdateShippingLblMarket={onUpdateShippingLblMarket}
 						{...this.props}
 					/>
 				</>
 			)
 		}
 	}
+	_Wizard.propTypes = {
+		header: PropTypes.func.isRequired,
+		steps: PropTypes.array.isRequired,
+		wizardContext: PropTypes.object.isRequired,
+		onComplete: PropTypes.func.isRequired,
+	}
+	return _Wizard
 }
 
 Wizard.propTypes = {
-	steps: PropTypes.array.isRequired,
-	wizardContext: PropTypes.object.isRequired,
+	WizardComponent: PropTypes.element,
 }
 
 export default Wizard

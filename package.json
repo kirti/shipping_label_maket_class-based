@@ -4,6 +4,11 @@
 	"private": true,
 	"dependencies": {
 		"@material-ui/core": "^4.10.1",
+		"@material-ui/icons": "^4.9.1",
+		"@testing-library/jest-dom": "^4.2.4",
+		"@testing-library/react": "^9.3.2",
+		"@testing-library/user-event": "^7.1.2",
+		"cross-env": "7.0.2",
 		"eslint-config-prettier": "^6.3.0",
 		"eslint-plugin-prettier": "^3.1.3",
 		"husky": "^1.3.1",
@@ -13,10 +18,6 @@
 		"react": "^16.13.1",
 		"react-dom": "^16.13.1",
 		"react-scripts": "3.4.1",
-		"cross-env": "7.0.2",
-		"@testing-library/jest-dom": "^4.2.4",
-		"@testing-library/react": "^9.3.2",
-		"@testing-library/user-event": "^7.1.2",
 		"typescript": "^3.5.3"
 	},
 	"scripts": {
@@ -25,10 +26,11 @@
 		"eslint": "eslint --ext .js ./ --fix --max-warnings=0",
 		"lint": "yarn prettier && yarn eslint",
 		"prettier": "prettier --write \"**/*.{js,json,css,html,md}\"",
-		"pr": "yarn lint && yarn build && yarn test",
+		"pr": "yarn lint && yarn build && yarn test && yarn e2e",
 		"test": "react-scripts test",
 		"test:coverage": "cross-env CI=1 react-scripts test --env=jsdom --coverage",
-		"test:watch": "react-scripts test --env=jsdom"
+		"test:watch": "react-scripts test --env=jsdom",
+		"e2e": "testcafe src/e2e/app.js"
 	},
 	"engines": {
 		"npm": ">=5",
@@ -49,11 +51,26 @@
 			"last 1 safari version"
 		]
 	},
+	"jest": {
+		"coveragePathIgnorePatterns": [
+			"src/index.js",
+			"src/serviceWorker.js"
+		]
+	},
 	"prettier": {
 		"semi": false,
 		"useTabs": true,
 		"printWidth": 110,
 		"singleQuote": true,
 		"trailingComma": "es5"
+	},
+	"devDependencies": {
+		"testcafe": "^1.8.6"
+	},
+	"husky":{
+       "hooks": {
+			"pre-commit" : "yarn lint",
+			"pre-push":"yarn build && yarn pr"
+	   }
 	}
 }

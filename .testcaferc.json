@@ -1,0 +1,10 @@
+{
+	"browsers": ["chrome"],
+	"screenshots": {
+		"takeOnFails": true
+	},
+	"selectorTimeout": 3000,
+	"assertionTimeout": 1000,
+	"pageLoadTimeout": 3000,
+	"speed": 0.1
+}

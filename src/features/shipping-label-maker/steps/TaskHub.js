@@ -1,22 +1,37 @@
 import React from 'react'
 import StepHubActionButton from './StepHubActionButton'
 import Container from '@material-ui/core/Container'
-import { TaskReceiverAddress } from './TaskReceiverAddress'
-import { TaskSenderAddress } from './TaskSenderAddress'
-import { TaskShippingOption } from './TaskShippingOption'
-import { TaskConfirm } from './TaskConfirm'
-import { TaskWeight } from './TaskWeight'
+import TaskReceiverAddress from './TaskReceiverAddress'
+import TaskSenderAddress from './TaskSenderAddress'
+import TaskShippingOption from './TaskShippingOption'
+import TaskConfirm from './TaskConfirm'
+import TaskWeight from './TaskWeight'
+import { ShippingLabel } from '../ShippingLabel'
 
-class TaskHub extends React.Component {
+export default class TaskHub extends React.Component {
 	render() {
-		const { steps, activeStep, onHandleStepAction, wizardContext, onUpdateShippingInfo } = this.props
-		const Task = getCurrentTask(activeStep, wizardContext, onUpdateShippingInfo)
+		const {
+			steps,
+			activeStep,
+			onHandleStepAction,
+			wizardContext,
+			onUpdateShippingLblMarket,
+			classes,
+		} = this.props
+
+		const Task = getCurrentTask(activeStep, steps, wizardContext, onUpdateShippingLblMarket, classes)
+
 		return (
 			<>
 				<Container component="main" maxWidth="xs">
-					<form>
+					<form className={classes.form} noValidate>
 						{Task}
-						<StepHubActionButton onAction={onHandleStepAction} activeStep={activeStep} steps={steps} />
+						<StepHubActionButton
+							onHandleStepAction={onHandleStepAction}
+							activeStep={activeStep}
+							steps={steps}
+							wizardContext={wizardContext}
+						/>
 					</form>
 				</Container>
 			</>
@@ -24,25 +39,44 @@ class TaskHub extends React.Component {
 	}
 }
 
-export default TaskHub
-
-function getCurrentTask(stepIndex, wizardContext, onUpdateShippingInfo) {
-	switch (stepIndex) {
+function getCurrentTask(activeStep, steps, wizardContext, onUpdateShippingLblMarket, classes) {
+	switch (activeStep) {
 		case 0:
-			return <TaskSenderAddress wizardContext={wizardContext} onUpdateShippingInfo={onUpdateShippingInfo} />
+			return (
+				<TaskSenderAddress
+					wizardContext={wizardContext}
+					onUpdateShippingLblMarket={onUpdateShippingLblMarket}
+				/>
+			)
 
 		case 1:
-			return <TaskReceiverAddress wizardContext={wizardContext} onUpdateShippingInfo={onUpdateShippingInfo} />
+			return (
+				<TaskReceiverAddress
+					wizardContext={wizardContext}
+					onUpdateShippingLblMarket={onUpdateShippingLblMarket}
+				/>
+			)
 
 		case 2:
-			return <TaskWeight wizardContext={wizardContext} onUpdateShippingInfo={onUpdateShippingInfo} />
+			return (
+				<TaskWeight wizardContext={wizardContext} onUpdateShippingLblMarket={onUpdateShippingLblMarket} />
+			)
 
 		case 3:
-			return <TaskShippingOption wizardContext={wizardContext} onUpdateShippingInfo={onUpdateShippingInfo} />
+			return (
+				<TaskShippingOption
+					wizardContext={wizardContext}
+					onUpdateShippingLblMarket={onUpdateShippingLblMarket}
+				/>
+			)
 
 		case 4:
-			return <TaskConfirm wizardContext={wizardContext} />
+			return <TaskConfirm wizardContext={wizardContext} classes={classes} />
+
 		default:
-			return 'Unknown step'
+			if (activeStep === steps.length) {
+				return <ShippingLabel wizardContext={wizardContext} classes={classes} />
+			}
+			return 'Unknown Task of Step'
 	}
 }
