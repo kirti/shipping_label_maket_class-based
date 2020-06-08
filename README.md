@@ -13,6 +13,31 @@ Description: It will install all the dependencies of project.
 Runs the app in the development mode.<br />
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
+
+### Low Level Design , Project file and folder structure 
+  ------ ### `Project File naming convention`
+     a) Folder name should in lower case or lower case with dashes(-).
+     b) File name should be in camel case
+     
+     ### `Low Level Design `
+     1.  `ShippingLabelMaker` [src/features/shipping-label-maker/ShippingLabelMarker.js] 
+        It is main file to start the project steps and in this file you will noticed the StepHub component which is wrrapedComponent for Wizard HOC 
+     2. 'StepHub' [src/features/shipping-label-maker/steps/StepHub.js] 
+        a) It contain StepHubProgressBar and TaskHub component for rendering the steps . 
+            i) StepHubProgressBar - It is used to display the progress bar in stepper mode 
+            ii) TaskHub is responsible to display the required form as per active step and complete logic for rendering Task is added in         getCurrentTask() function. 
+            We can add as many components within one step 
+            that's why it is named as TaskHub 
+            iii) StepHubActionButton - renders the previous and next button for the step
+     3. ### `Step 1 (GetSenderAddress)` - `Task` is named as TaskSenderAddress.js and located at [src/features/shipping-label-maker/steps/TaskSenderAddress.js]
+     4.  ### `Step 2 (GetReceiverAddress)` - `Task` is named as TaskReceiverAddress.js and located at [src/features/shipping-label-maker/steps/TaskReceiverAddress.js]
+     5 ### `Step 3 (GetWeight)` - `Task` is named as TaskWeight.js and located at [src/features/shipping-label-maker/steps/TaskWeight.js]
+     6.  ### `Step 4 (GetShippingOption)` - `Task` is named as TaskSenderAddress.js and located at [src/features/shipping-label-maker/steps/TaskShippingOption.js]
+     7. ### `Step 5 (Confirm)` - `Task` is named as TaskConfirm.js and located at [src/features/shipping-label-maker/steps/TaskConfirm.js]
+        8.### `ShippingLabel` - is named as `ShippingLabel.js` and located at  [src/features/shipping-label-maker/ShippingLabel.js]
+ 
+
+
 ### `yarn test`
 Launches the test runner in the interactive watch mode.
 
@@ -56,29 +81,7 @@ This is higher order component class so that it can accept steps, actions and wi
 This is higher order function component. This will help in Authentication, and then it will initiate the shipping label marker project. --- To run this, go to http://localhost:3000](http://localhost:3000) and enter the username: kirti and password:shiva@3@456
 --- Basic validation is added for now for login button 
 
-### Low Level Design , Project file and folder structure 
-  ------ ### `Project File naming convention`
-     a) Folder name should in lower case or lower case with dashes(-).
-     b) File name should be in camel case
-     
-     ### `Low Level Design `
-     1.  `ShippingLabelMaker` [src/features/shipping-label-maker/ShippingLabelMarker.js] 
-        It is main file to start the project steps and in this file you will noticed the StepHub component which is wrrapedComponent for Wizard HOC 
-     2. 'StepHub' [src/features/shipping-label-maker/steps/StepHub.js] 
-        a) It contain StepHubProgressBar and TaskHub component for rendering the steps . 
-            i) StepHubProgressBar - It is used to display the progress bar in stepper mode 
-            ii) TaskHub is responsible to display the required form as per active step and complete logic for rendering Task is added in         getCurrentTask() function. 
-            We can add as many components within one step 
-            that's why it is named as TaskHub 
-            iii) StepHubActionButton - renders the previous and next button for the step
-     3. ### `Step 1 (GetSenderAddress)` - `Task` is named as TaskSenderAddress.js and located at [src/features/shipping-label-maker/steps/TaskSenderAddress.js]
-     4.  ### `Step 2 (GetReceiverAddress)` - `Task` is named as TaskReceiverAddress.js and located at [src/features/shipping-label-maker/steps/TaskReceiverAddress.js]
-     5 ### `Step 3 (GetWeight)` - `Task` is named as TaskWeight.js and located at [src/features/shipping-label-maker/steps/TaskWeight.js]
-     6.  ### `Step 4 (GetShippingOption)` - `Task` is named as TaskSenderAddress.js and located at [src/features/shipping-label-maker/steps/TaskShippingOption.js]
-     7. ### `Step 5 (Confirm)` - `Task` is named as TaskConfirm.js and located at [src/features/shipping-label-maker/steps/TaskConfirm.js]
-        
- 8.### `ShippingLabel` - is named as `ShippingLabel.js` and located at  [src/features/shipping-label-maker/ShippingLabel.js]
- 
+
   ### ` Validations  `
    Validation pending - 
 
