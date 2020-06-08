@@ -1,8 +1,9 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
-
-In the project directory, you can run:
+## Available Scripts (In Package.Json)
+In the project directory, you can run: 
+### For Installation 'yarn install'
+Description: It will install all the dependencies of project.
 
 ### `yarn start`
 
@@ -27,42 +28,37 @@ Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `yarn eject`
+### 'yarn pr’
+Desc: This command will help in identifying Lint errors, run unit, and end to end test cases and to create deployable code for the production. 
+### ‘yarn prettier’
+Desc: This command will beautify/format the code. 
+### ‘yarn lint”
+Desc: This command will help to identify Lint errors.
+### ‘yarn e2e”
+Desc: This command will run end to end test cases.
+### husky
+This command can prevent bad git commit, and push.
+### UI library 
+Material UI
+### end to end testing
+TestCafe
+File of Testcafe is located at src/e2e/app.js. A basic test case is written to validate whole application workflow
+### Unit testing
+React testing library
+File of unit test case is located at src/App.test.js. Four test cases are written to validate 
+1.	Wizard moves backwards and forwards based on actions sent by steps.
+2.	Wizard calls onComplete() of the parent when a steps sends the end action.
+3.	Shipping Label marker prints the shipping label when onComplete() is called.
+### Core Component 
+The file is located at src/core/components/wizard/folder/Wizard.js. 
+This is higher order component class so that it can accept steps, actions and wizard context.
+### Auth Component
+This is higher order function component. This will help in Authentication, and then it will initiate the shipping label marker project. To run this, go to http://localhost:3000](http://localhost:3000) and enter the username: kirti and password:shiva@3@456
+### Project File naming convention
+Folder name should in lower case or lower case with dashes(-).
+File name should be in camel case
+### Project’s file location
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `yarn build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
