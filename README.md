@@ -62,8 +62,8 @@ File of unit test case is located at [src/App.test.js]. Four test cases are writ
 2.	Wizard calls onComplete() of the parent when a steps sends the end action.
 3.	Shipping Label marker prints the shipping label when onComplete() is called.
 
-### ` Validations  `
-   Validation pending for steps - Not done 
+### `Validations `
+   Validation pending for steps - Not completed 
    
 ### `PACKAGE.JSON - USEFUL COMMANDS FOR PROJECT DEPLOYMENT AND TESTING `
 
