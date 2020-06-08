@@ -33,19 +33,25 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
      7. ### `Step 5 (Confirm)` - `Task` is named as TaskConfirm.js and located at [src/features/shipping-label-maker/steps/TaskConfirm.js]
         8.### `ShippingLabel` - is named as `ShippingLabel.js` and located at  [src/features/shipping-label-maker/ShippingLabel.js]
  
-### `Core Component `
+### `Core Component wizard` [src/core/components/wizard]
 The file is located at [src/core/components/wizard/folder/Wizard.js.]
 This is higher order component class so that it can accept steps, actions and wizard context.
 
-### `Auth Component`
+### `Auth Component` [src/core/components/auth]
 This is higher order function component. This will help in Authentication, and then it will initiate the shipping label marker project. --- To run this, go to http://localhost:3000](http://localhost:3000) and enter the username: kirti and password:shiva@3@456
 --- Basic validation is added for now for login button 
 
-### `UI library`
+### `Util Folder` [src/util]
+ This is used as utility of shippingLabelMarker to get shipping cost , getShippingOption, getShippingCost, ShippingOption, convertWeightToInt. 
+
+### `common folder` [src/common]
+It is used for command components like Header, footer , signup etc.  
+
+### `UI library` 
 Material UI - 
  Modified the css accordingly as per template
  
-### `End to End Testing`
+### `End to End Testing` [src/e2e]
   ### TestCafe
    File of Testcafe is located at [src/e2e/app.js]. A basic test case is written to validate whole application workflow. Configuration is added for only chrome browser for now. But we can modified the configuations as per our requirement. Ideally we should add all browsers to verify the code . 
    
@@ -57,7 +63,7 @@ File of unit test case is located at [src/App.test.js]. Four test cases are writ
 3.	Shipping Label marker prints the shipping label when onComplete() is called.
 
 ### ` Validations  `
-   Validation pending - 
+   Validation pending for steps - Not done 
    
 ### `PACKAGE.JSON - USEFUL COMMANDS FOR PROJECT DEPLOYMENT AND TESTING `
 
