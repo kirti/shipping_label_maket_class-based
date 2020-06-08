@@ -36,8 +36,9 @@ iii) StepHubActionButton - renders the previous and next button for the step 3. 
 ------ ### `Project File naming convention`
 a) Folder name should in lower case or lower case with dashes(-).
 b) File name should be in camel case
-  
- ### `Low Level Design` 1. `ShippingLabelMaker` [src/features/shipping-label-maker/ShippingLabelMarker.js]
+
+### `Low Level Design` 1. `ShippingLabelMaker` [src/features/shipping-label-maker/ShippingLabelMarker.js]
+
 It is main file to start the project's steps and in this file you will find the StepHub component which is wrrapedComponent for Wizard HOC 2. 'StepHub' [src/features/shipping-label-maker/steps/StepHub.js]
 a) It contains StepHubProgressBar and TaskHub component for rendering the steps.
 i) StepHubProgressBar - It is used to display the progress bar in stepper mode.

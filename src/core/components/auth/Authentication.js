@@ -12,7 +12,7 @@ export default function Authorized(WrappedComponent) {
 		}
 
 		handleLogin = (id, userName, password) => {
-			if (id === 'login' && userName === 'kirti' && password === 'shiva@3@456') {
+			if (id === 'login' && userName === 'sapient' && password === 'sapient@123') {
 				this.setState({
 					auth: true,
 					authError: false,

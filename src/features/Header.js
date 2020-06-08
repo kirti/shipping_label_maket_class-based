@@ -7,9 +7,7 @@ const Header = () => {
 			<p>
 				Shipping Label Maker Shipping Label Maker is an application that collects shipping information from
 				the user and prints a shipping label. Fill in the required information and generate a shipping label
-				on the spot. Just print it on sticker paper and affix it to your box! The Shopify shipping label
-				template uses a professional layout that includes all of the necessary details for clean and
-				consistent shipping labels.
+				on the spot.
 			</p>
 		</div>
 	)

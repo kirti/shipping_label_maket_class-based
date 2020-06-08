@@ -19,9 +19,9 @@ it('Render Sender Component when correct user and pwd  ', () => {
 	expect(username.textContent).toBe('')
 	expect(password.textContent).toBe('')
 
-	const newName = 'kirti'
+	const newName = 'sapient'
 	fireEvent.change(username, { target: { value: newName } })
-	const newPwd = 'shiva@3@456'
+	const newPwd = 'sapient@123'
 	fireEvent.change(password, { target: { value: newPwd } })
 	fireEvent.click(submitButton)
 	const { getByText } = render(<App />)
@@ -40,7 +40,7 @@ it('Render Login page when incorrect user and pwd  ', () => {
 
 	const newName = 'kirti2'
 	fireEvent.change(username, { target: { value: newName } })
-	const newPwd = 'shiva@3@456'
+	const newPwd = 'shis6'
 	fireEvent.change(password, { target: { value: newPwd } })
 	fireEvent.click(submitButton)
 	const { asFragment } = render(<App />)
@@ -56,9 +56,9 @@ it('Render Complete App with all screen with Prev and Next ', async () => {
 	expect(username.textContent).toBe('')
 	expect(password.textContent).toBe('')
 
-	const newName = 'kirti'
+	const newName = 'sapient'
 	fireEvent.change(username, { target: { value: newName } })
-	const newPwd = 'shiva@3@456'
+	const newPwd = 'sapient@123'
 	fireEvent.change(password, { target: { value: newPwd } })
 	fireEvent.click(submitButton)
 	const { getByText } = render(<App />)
