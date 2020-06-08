@@ -14,7 +14,7 @@ class ShippingLabelMaker extends React.PureComponent {
 			shippingInfo: shippingInfoData,
 			steps: [
 				'Enter the sender address',
-				`Enter the receiver's address`,
+				"Enter the receiver's address",
 				'Enter the weight',
 				'Select the Shipping Option',
 				'Confirm',

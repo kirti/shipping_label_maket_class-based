@@ -2,3 +2,4 @@ dist/
 .cache/
 coverage/
 build/
+e2e/
