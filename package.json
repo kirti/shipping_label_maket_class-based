@@ -27,7 +27,7 @@
 		"lint": "yarn prettier && yarn eslint",
 		"prettier": "prettier --write \"**/*.{js,json,css,html,md}\"",
 		"pr": "yarn lint && yarn build && yarn test && yarn e2e",
-		"test": "react-scripts test",
+		"test": "cross-env CI=1 react-scripts test --env=jsdom --coverage",
 		"test:coverage": "cross-env CI=1 react-scripts test --env=jsdom --coverage",
 		"test:watch": "react-scripts test --env=jsdom",
 		"e2e": "testcafe src/e2e/app.js"
@@ -67,10 +67,10 @@
 	"devDependencies": {
 		"testcafe": "^1.8.6"
 	},
-	"husky":{
-       "hooks": {
-			"pre-commit" : "yarn lint",
-			"pre-push":"yarn build && yarn pr"
-	   }
+	"husky": {
+		"hooks": {
+			"pre-commit": "yarn lint",
+			"pre-push": "yarn build && yarn pr"
+		}
 	}
 }

@@ -3,10 +3,10 @@
 exports[`Render Login page when incorrect user and pwd   1`] = `
 <DocumentFragment>
   <div
-    class="makeStyles-root-53"
+    class="makeStyles-root-55"
   >
     <header
-      class="MuiPaper-root MuiAppBar-root MuiAppBar-positionAbsolute MuiAppBar-colorDefault makeStyles-appBar-54 MuiPaper-elevation4"
+      class="MuiPaper-root MuiAppBar-root MuiAppBar-positionAbsolute MuiAppBar-colorDefault makeStyles-appBar-56 MuiPaper-elevation4"
     >
       <div
         class="MuiToolbar-root MuiToolbar-regular MuiToolbar-gutters"
@@ -19,19 +19,19 @@ exports[`Render Login page when incorrect user and pwd   1`] = `
       </div>
     </header>
     <main
-      class="MuiGrid-root makeStyles-root-53 MuiGrid-container"
+      class="MuiGrid-root makeStyles-root-55 MuiGrid-container"
     >
       <div
-        class="MuiGrid-root makeStyles-image-60 MuiGrid-item MuiGrid-grid-sm-4 MuiGrid-grid-md-7"
+        class="MuiGrid-root makeStyles-image-62 MuiGrid-item MuiGrid-grid-sm-4 MuiGrid-grid-md-7"
       />
       <div
         class="MuiPaper-root MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-8 MuiGrid-grid-md-5 MuiPaper-elevation6"
       >
         <div
-          class="makeStyles-paper-56"
+          class="makeStyles-paper-58"
         >
           <div
-            class="MuiAvatar-root MuiAvatar-circle makeStyles-avatar-61 MuiAvatar-colorDefault"
+            class="MuiAvatar-root MuiAvatar-circle makeStyles-avatar-63 MuiAvatar-colorDefault"
           >
             <svg
               aria-hidden="true"
@@ -49,8 +49,11 @@ exports[`Render Login page when incorrect user and pwd   1`] = `
           >
             Sign in
           </h1>
+          <h1
+            class="MuiTypography-root MuiTypography-h5"
+          />
           <form
-            class="makeStyles-form-62"
+            class="makeStyles-form-64"
             novalidate=""
           >
             <div
@@ -85,10 +88,10 @@ exports[`Render Login page when incorrect user and pwd   1`] = `
                 />
                 <fieldset
                   aria-hidden="true"
-                  class="PrivateNotchedOutline-root-67 MuiOutlinedInput-notchedOutline"
+                  class="PrivateNotchedOutline-root-70 MuiOutlinedInput-notchedOutline"
                 >
                   <legend
-                    class="PrivateNotchedOutline-legendLabelled-69 PrivateNotchedOutline-legendNotched-70"
+                    class="PrivateNotchedOutline-legendLabelled-72 PrivateNotchedOutline-legendNotched-73"
                   >
                     <span>
                       Username *
@@ -129,10 +132,10 @@ exports[`Render Login page when incorrect user and pwd   1`] = `
                 />
                 <fieldset
                   aria-hidden="true"
-                  class="PrivateNotchedOutline-root-67 MuiOutlinedInput-notchedOutline"
+                  class="PrivateNotchedOutline-root-70 MuiOutlinedInput-notchedOutline"
                 >
                   <legend
-                    class="PrivateNotchedOutline-legendLabelled-69"
+                    class="PrivateNotchedOutline-legendLabelled-72"
                   >
                     <span>
                       Password *
@@ -146,13 +149,13 @@ exports[`Render Login page when incorrect user and pwd   1`] = `
             >
               <span
                 aria-disabled="false"
-                class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-71 MuiCheckbox-root MuiCheckbox-colorPrimary MuiIconButton-colorPrimary"
+                class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-74 MuiCheckbox-root MuiCheckbox-colorPrimary MuiIconButton-colorPrimary"
               >
                 <span
                   class="MuiIconButton-label"
                 >
                   <input
-                    class="PrivateSwitchBase-input-74"
+                    class="PrivateSwitchBase-input-77"
                     data-indeterminate="false"
                     type="checkbox"
                     value="remember"
@@ -179,7 +182,7 @@ exports[`Render Login page when incorrect user and pwd   1`] = `
               </span>
             </label>
             <button
-              class="MuiButtonBase-root MuiButton-root MuiButton-contained makeStyles-submit-63 MuiButton-containedPrimary MuiButton-fullWidth"
+              class="MuiButtonBase-root MuiButton-root MuiButton-contained makeStyles-submit-65 MuiButton-containedPrimary MuiButton-fullWidth"
               id="login"
               tabindex="0"
               type="submit"
@@ -223,7 +226,7 @@ exports[`Render Login page when incorrect user and pwd   1`] = `
     </main>
     <div>
       <footer
-        class="makeStyles-footer-64"
+        class="makeStyles-footer-66"
       >
         <div
           class="MuiContainer-root MuiContainer-maxWidthSm"
