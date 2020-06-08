@@ -1,3 +1,6 @@
+### `Shipping Label Maker is an application that collects shipping information from the user and prints a shipping label. `
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts (In Package.Json)
