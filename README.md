@@ -1,11 +1,8 @@
 ### `Shipping Label Maker is an application that collects shipping information from the user and prints a shipping label. `
 
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-## Available Scripts (In Package.Json)
-In the project directory, you can run: 
-### For Installation 'yarn install'
+### This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+      
+### Project Setup  `yarn install`
 Description: It will install all the dependencies of project.
 
 ### `yarn start`
@@ -36,9 +33,35 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
      7. ### `Step 5 (Confirm)` - `Task` is named as TaskConfirm.js and located at [src/features/shipping-label-maker/steps/TaskConfirm.js]
         8.### `ShippingLabel` - is named as `ShippingLabel.js` and located at  [src/features/shipping-label-maker/ShippingLabel.js]
  
+### `Core Component `
+The file is located at [src/core/components/wizard/folder/Wizard.js.]
+This is higher order component class so that it can accept steps, actions and wizard context.
 
+### `Auth Component`
+This is higher order function component. This will help in Authentication, and then it will initiate the shipping label marker project. --- To run this, go to http://localhost:3000](http://localhost:3000) and enter the username: kirti and password:shiva@3@456
+--- Basic validation is added for now for login button 
 
-### `yarn test`
+### `UI library`
+Material UI - 
+ Modified the css accordingly as per template
+ 
+### `End to End Testing`
+  ### TestCafe
+   File of Testcafe is located at [src/e2e/app.js]. A basic test case is written to validate whole application workflow. Configuration is added for only chrome browser for now. But we can modified the configuations as per our requirement. Ideally we should add all browsers to verify the code . 
+   
+### `Unit testing`
+### React testing library
+File of unit test case is located at [src/App.test.js]. Four test cases are written to validate 
+1.	Wizard moves backwards and forwards based on actions sent by steps.
+2.	Wizard calls onComplete() of the parent when a steps sends the end action.
+3.	Shipping Label marker prints the shipping label when onComplete() is called.
+
+### ` Validations  `
+   Validation pending - 
+   
+### `PACKAGE.JSON - USEFUL COMMANDS FOR PROJECT DEPLOYMENT AND TESTING `
+
+`### `yarn test`
 Launches the test runner in the interactive watch mode.
 
 ### `yarn build`
@@ -58,32 +81,11 @@ This command will run end to end test cases.
 
 ### `husky`
 Husky hook is added to prevent bad git commit, and push. And  pre-commit and pre-push hook is added to prevent the bad git push and commit 
-
-### `UI library `
-Material UI - 
- Modified the css accordingly as per template
- 
-### `End to End Testing`
-### TestCafe
-   File of Testcafe is located at [src/e2e/app.js]. A basic test case is written to validate whole application workflow. Configuration is added for only chrome browser for now. But we can modified the configuations as per our requirement. Ideally we should add all browsers to verify the code . 
-   
-### `Unit testing`
-### React testing library
-File of unit test case is located at [src/App.test.js]. Four test cases are written to validate 
-1.	Wizard moves backwards and forwards based on actions sent by steps.
-2.	Wizard calls onComplete() of the parent when a steps sends the end action.
-3.	Shipping Label marker prints the shipping label when onComplete() is called.
-
-### `Core Component `
-The file is located at [src/core/components/wizard/folder/Wizard.js.]
-This is higher order component class so that it can accept steps, actions and wizard context.
-### `Auth Component'
-This is higher order function component. This will help in Authentication, and then it will initiate the shipping label marker project. --- To run this, go to http://localhost:3000](http://localhost:3000) and enter the username: kirti and password:shiva@3@456
---- Basic validation is added for now for login button 
+`
 
 
-  ### ` Validations  `
-   Validation pending - 
+
+  
 
 
 
